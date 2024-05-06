@@ -1,0 +1,11 @@
+What we could do:
+* implement a kernel taking into account 4 or 8 measures (our maximum phrase length), or other length for nested phrases, and going through the _annotations.txt files. using the beats within the kernel window, we can detect whether the last beat is longer than the average length of the preceding ones. Or more efficient, we could try to see whether we find a beat which is longer than the ones before and after it. 
+* we can also implement a comparable kernel for the velocity, this time using the performed midi. This one wouldn't only detect 'louder' or 'quieter', but a change in velocity. For example, if when looking at 8 measures window, we find the average velocity of the last 4 is significantly higher than the first 4, we can postulate there's a phrase boundary in the middle of our window.
+
+For the 2 above idea, instead of having a black or white decision, we could assign to each measure end a 'probability' of being a phrase boundary. We could combine approaches by multiplying the numbers, or by using a more mathematically sound approach if there's one. Probability is in quotes because it wouldn't actually be a probability distribution.
+We could tune the values we compute and their weight/contribution by computing statistics on the performed data we have.
+To actually decide, we can do some sort of softmax also using some sliding window, (for example, we normalize probabilities so that every elem's probability is the softmax of the n-beats's value around it, so that if we sample from that distribution, we have on average 1 in n beats that is sampled. that could be a way to integrate our prior on the length of phrases in the process). Or if you have better ideas please suggest, I'm not sure about that. 
+
+So that could be an idea for the 1st part of Task C. 
+Then for 3., we could try to improve the above, by assigning other 'probabilities' using the symbolic score and aggregating them to the previous 'probabilities'.
+Or we could also simply implement the self-similarity matrix method.
