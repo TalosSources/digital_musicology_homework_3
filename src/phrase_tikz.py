@@ -6,7 +6,7 @@ import numpy as np
 ROOT_PATH = Path(__file__).absolute().resolve().parent.parent
 
 
-def convert_list_to_tikz(measures, filename, start_index=0):
+def convert_list_to_tikz(measures, filename, start_index=0, init_height=5):
     # if measure number starts from zero -- add one
     if start_index == 0:
         measures = [elem + 1 for elem in measures]
@@ -34,7 +34,7 @@ def convert_list_to_tikz(measures, filename, start_index=0):
 
     short_by = 1
 
-    height = 0
+    height = init_height * 0
     shift = 1
 
     prev_number = 1
@@ -70,7 +70,7 @@ def convert_list_to_tikz(measures, filename, start_index=0):
         prev_number = number
 
         if number > 30:
-            height = -5
+            height = -init_height * 1
             if shift <= 30:
                 shift = number
                 code += node_form.format(
@@ -81,7 +81,7 @@ def convert_list_to_tikz(measures, filename, start_index=0):
                 )
 
         if number > 60:
-            height = -10
+            height = -init_height * 2
             if shift <= 60:
                 shift = number
 
@@ -139,4 +139,34 @@ if __name__ == "__main__":
         83.0,
         85.0,
     ]
-    print(convert_list_to_tikz(array, "example.tex"))
+    print(convert_list_to_tikz(array, "example.tex", init_height=3))
+
+    # from perf version
+    array = [
+        4,
+        8,
+        11,
+        16,
+        19,
+        24,
+        27,
+        30,
+        32,
+        34,
+        39,
+        43,
+        46,
+        48,
+        51,
+        54,
+        58,
+        62,
+        66,
+        69,
+        73,
+        76,
+        80,
+        83,
+        84,
+    ]
+    print(convert_list_to_tikz(array, "alg_perf_phrases.tex", init_height=3.5))
