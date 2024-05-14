@@ -1,10 +1,17 @@
 import os
 from pathlib import Path
 
+import numpy as np
+
 ROOT_PATH = Path(__file__).absolute().resolve().parent.parent
 
 
-def convert_list_to_tiks(measures, filename):
+def convert_list_to_tikz(measures, filename):
+    if isinstance(measures, np.ndarray):
+        measures = measures.tolist()
+
+    measures = measures + [87.0]  # make sure end is in list
+
     script_path = ROOT_PATH / "report" / "long_script.sh"
     file_path = ROOT_PATH / "report" / filename
 
@@ -127,6 +134,5 @@ if __name__ == "__main__":
         82.0,
         83.0,
         85.0,
-        87.0,
     ]
     print(convert_list_to_tiks(array, "example.tex"))
