@@ -1,5 +1,5 @@
 numpy
-scipy
+scipy==1.10.1
 matplotlib
 pandas
 seaborn
@@ -7,6 +7,10 @@ music21
 iteration_utilities
 pretty_midi
 git+https://github.com/quadrismegistus/prosodic.git
+gensim
+librosa
+
+notebook
 
 black
 isort
