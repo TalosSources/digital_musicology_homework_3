@@ -66,6 +66,12 @@ The project structure is as follows:
     └── __init__.py
 ```
 
+## How To Use
+
+To reproduce segmentation, run the code in the corresponding notebooks: `ssm.ipynb` and TODO.
+
+To draw tikz picture, use `src/phrase_tikz.py`.
+
 ## Authors
 
 The project was done by:
