@@ -63,8 +63,23 @@ The project structure is as follows:
 ├── README.md                    # this file
 ├── requirements.txt             # list of required packages
 └── src                          # package with core implementations
-    └── __init__.py
+│   ├── data.py
+│   ├── __init__.py
+│   ├── phrase_segmentation.py
+│   ├── phrase_tikz.py           # segmentation to tikz converter
+│   ├── ssm_helper.py            # helper function for ssm
+│   └── taskC1.ipynb
+└── ssm.ipynb                    # symbolic phrasing
 ```
+
+## How To Use
+
+To reproduce segmentation, run the code in the corresponding notebooks: `ssm.ipynb` and TODO.
+
+To draw tikz picture, use `src/phrase_tikz.py`.
+
+> [!NOTE]
+> Pdf creator `phrase_tikz.py` requires `pdflatex` and `pdfcropmargins` to be installed. The later can be installed via `pip install pdfCropMargins`.
 
 ## Authors
 
