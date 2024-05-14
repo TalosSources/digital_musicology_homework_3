@@ -6,7 +6,11 @@ import numpy as np
 ROOT_PATH = Path(__file__).absolute().resolve().parent.parent
 
 
-def convert_list_to_tikz(measures, filename):
+def convert_list_to_tikz(measures, filename, start_index=0):
+    # if measure number starts from zero -- add one
+    if start_index == 0:
+        measures = [elem + 1 for elem in measures]
+
     if isinstance(measures, np.ndarray):
         measures = measures.tolist()
 
@@ -31,9 +35,9 @@ def convert_list_to_tikz(measures, filename):
     short_by = 1
 
     height = 0
-    shift = 0
+    shift = 1
 
-    prev_number = 0
+    prev_number = 1
     code += node_form.format(
         int(prev_number * 1000),
         prev_number / short_by - shift / short_by,
@@ -135,4 +139,4 @@ if __name__ == "__main__":
         83.0,
         85.0,
     ]
-    print(convert_list_to_tiks(array, "example.tex"))
+    print(convert_list_to_tikz(array, "example.tex"))
