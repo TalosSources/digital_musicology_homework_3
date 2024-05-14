@@ -70,7 +70,7 @@ def convert_list_to_tikz(measures, filename, start_index=0):
         prev_number = number
 
         if number > 30:
-            height = -3
+            height = -5
             if shift <= 30:
                 shift = number
                 code += node_form.format(
@@ -81,7 +81,7 @@ def convert_list_to_tikz(measures, filename, start_index=0):
                 )
 
         if number > 60:
-            height = -6
+            height = -10
             if shift <= 60:
                 shift = number
 
