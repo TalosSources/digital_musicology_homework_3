@@ -127,5 +127,6 @@ if __name__ == "__main__":
         82.0,
         83.0,
         85.0,
+        87.0,
     ]
     print(convert_list_to_tiks(array, "example.tex"))
