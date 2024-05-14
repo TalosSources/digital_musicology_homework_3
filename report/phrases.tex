@@ -2,6 +2,9 @@
 	\centering
 	\resizebox{\columnwidth}{!}{\begin{tikzpicture}[
 			roundblack/.style={circle, draw=black!60, fill=red!5, very thick, minimum size=7mm},
+			roundblackpink/.style={circle, draw=black!60, fill=magenta!5, very thick, minimum size=7mm},
+			roundblackgreen/.style={circle, draw=black!60, fill=green!5, very thick, minimum size=7mm},
+			roundblackblue/.style={circle, draw=black!60, fill=blue!5, very thick, minimum size=7mm},
 			squarered/.style={rectangle, draw=red!60, fill=red!5, very thick, minimum size=5mm},
 			squareblue/.style={rectangle, draw=blue!60, fill=blue!5, very thick, minimum size=5mm},
 			squarepink/.style={rectangle, draw=magenta!60, fill=magenta!5, very thick, minimum size=5mm},
@@ -36,8 +39,8 @@
 			\node[squareblue] (29) at (5,-5) {$29$};
 			\node[squareblue] (30) at (6,-5) {$30$};
 			\node[squareblue] (31) at (7,-5) {$31$};
-			\node[squareblue] (32) at (8,-5) {$32$};
-			\node[squareblue] (33) at (9,-5) {$35$};
+			\node[roundblackblue] (32) at (8,-5) {$32$};
+			\node[squareblue] (33) at (9,-5) {$33$};
 			\node[squareblue] (35) at (11,-5) {$35$};
 			\node[squareblue] (37) at (13,-5) {$37$};
 			\node[squareblue] (39) at (15,-5) {$39$};
@@ -47,7 +50,7 @@
 			\node[squareblue] (46) at (22,-5) {$46$};
 			\node[squareblue] (48) at (24,-5) {$48$};
 			\node[squareblue] (49) at (25,-5) {$49$};
-			\node[squareblue] (51) at (27,-5) {$51$};
+			\node[roundblackblue] (51) at (27,-5) {$51$};
 			\node[squareblue] (53) at (29,-5) {$53$};
 			\node[squareblue] (55part2) at (31,-5) {$55$};
 
@@ -62,16 +65,19 @@
 			\node[squarepink] (67) at (13,-12) {$67$};
 			\node[squarepink] (68) at (14,-12) {$68$};
 			\node[squarepink] (69) at (15,-12) {$69$};
+
 			\node[squarepink] (70) at (16,-12) {$70$};
+			%\node[squarepink] (71) at (17,-12) {$71$};
 			\node[squarepink] (71) at (17,-12) {$71$};
 			\node[squarepink] (72) at (18,-12) {$72$};
 			\node[squarepink] (73) at (19,-12) {$73$};
-			\node[squarepink] (74) at (20,-12) {$74$};
+			\node[roundblackpink] (74) at (20,-12) {$74$};
 
 			% ending
-			\node[squaregreen] (77) at (23,-12) {$77$};
-			\node[squaregreen] (78) at (24,-12) {$78$};
-			\node[squaregreen] (81) at (27,-12) {$81$};
+			\node[squaregreen] (76) at (22,-12) {$76$};
+			\node[roundblackgreen] (78) at (24,-12) {$78$};
+			%\node[roundblackgreen] (82) at (28,-12) {$82$};
+			\node[roundblackgreen] (81) at (27,-12) {$81$};
 			\node[squaregreen] (82) at (28,-12) {$82$};
 			\node[squaregreen] (83) at (29,-12) {$83$};
 			\node[squaregreen] (84) at (30,-12) {$84$};
@@ -80,7 +86,7 @@
 			\draw[black] (3)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_1$};
 			\draw[black] (5)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_2$};
 			\draw[black] (5)+(0,0.3) arc (0:180:2) node[midway,fill=white]{$A_1$};
-			\draw[black] (7)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_1$};
+			\draw[black] (7)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_1'$};
 			\draw[black] (9)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_2'$};
 			\draw[black] (9)+(0,0.3) arc (0:180:2) node[midway,fill=white]{$A_2$};
 			\draw[black] (9)+(0,0.3) arc (0:180:4) node[midway,fill=white]{$A$};
@@ -150,41 +156,48 @@
 
 			% part 3
 
-			\draw[black] (57)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_1'$};
-			\draw[black] (59)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_2''$};
-			\draw[black] (59)+(0,0.3) arc (0:180:2) node[midway,fill=white]{$A_1'$};
+			\draw[black] (57)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_1$};
+			\draw[black] (59)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_2$};
+			\draw[black] (59)+(0,0.3) arc (0:180:2) node[midway,fill=white]{$A_1$};
 			\draw[black] (61)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_1'$};
-			\draw[black] (63)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_2'''$};
-			\draw[black] (63)+(0,0.3) arc (0:180:2) node[midway,fill=white]{$A_2'$};
-			\draw[black] (63)+(0,0.3) arc (0:180:4) node[midway,fill=white]{$A'$};
+			\draw[black] (63)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_2'$};
+			\draw[black] (63)+(0,0.3) arc (0:180:2) node[midway,fill=white]{$A_2$};
+			\draw[black] (63)+(0,0.3) arc (0:180:4) node[midway,fill=white]{$A$};
 
-			\draw[black] (65)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_3''$};
+			\draw[black] (65)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_{3,k}$};
 			\draw[black] (67)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_3'$};
 			\draw[black] (67)+(0,0.3) arc (0:180:2) node[midway,fill=white]{$B_1'$};
 			\draw[black] (67)+(0,0.3) arc (0:180:2) node[midway,fill=white]{$B_1'$};
 			\draw[black] (68)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_4$};
 			\draw[black] (69)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_4'$};
 			\draw[black] (70)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_4''$};
-			\draw[black] (71)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_9$};
-			\draw[black] (71)+(0,0.3) arc (0:180:2) node[midway,fill=white]{$B_2'$};
 
-			\draw[black] (72)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_4'''$};
-			\draw[black] (73)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_4''''$};
-			\draw[black] (74)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_4''$};
-			\draw[black] (74)+(0,0.3) arc (0:180:1.5) node[midway,fill=white]{$B_2''$};
+			%\draw[black] (70)+(0,-0.3) arc (0:-180:0.5) node[midway,fill=white]{split};
+			%\draw[black] (71)+(0,-0.3) arc (0:-180:1) node[midway,fill=white]{split-measure (1 in 2)};
+
+
+			%\draw[black] (71)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_9$};
+			\draw[black] (70)+(0,0.3) arc (0:180:1.5) node[midway,fill=white]{$B_2$};
+			\draw[black] (71)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_9$};
+
+			\draw[black] (72)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_{4,k}$};
+			\draw[black] (73)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_{4,k}'$};
+			\draw[black] (74)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_{4,k}''$};
+			\draw[black] (74)+(0,0.3) arc (0:180:1.5) node[midway,fill=white]{$B_{2,k}$};
 			\draw[black] (74)+(0,0.3) arc (0:180:5.5) node[midway,fill=white]{$B''$};
 
-			\draw[black] (77)+(0,0.3) arc (0:180:1.5) node[midway,fill=white]{$T_{10}$};
-			\draw[black] (78)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_{11}$};
+			\draw[black] (76)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_{10}$};
+			\draw[black] (78)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$T_{11}$};
 			\draw[black] (78)+(0,0.3) arc (0:180:2) node[midway,fill=white]{$H_1$};
-			\draw[black] (81)+(0,0.3) arc (0:180:1.5) node[midway,fill=white]{$T_{10}'$};
-			\draw[black] (82)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_{11}$};
-			\draw[black] (82)+(0,0.3) arc (0:180:2) node[midway,fill=white]{$H_1'$};
-			\draw[black] (82)+(0,0.3) arc (0:180:4) node[midway,fill=white]{$H$};
+			%\draw[black] (82)+(0,0.3) arc (0:180:1.5) node[midway,fill=white]{$T_{10}'$};
+			%\draw[black] (83)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$T_{11}$};
+			\draw[black] (81)+(0,0.3) arc (0:180:1.5) node[midway,fill=white]{$H_1'$};
+			\draw[black] (81)+(0,0.3) arc (0:180:3.5) node[midway,fill=white]{$H$};
 
-			\draw[black] (83)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$I_1$};
-			\draw[black] (84)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$I_2$};
-			\draw[black] (84)+(0,0.3) arc (0:180:1) node[midway,fill=white]{$I$};
+			\draw[black] (82)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$I_1$};
+			\draw[black] (83)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$I_2$};
+			\draw[black] (84)+(0,0.3) arc (0:180:0.5) node[midway,fill=white]{$I_3$};
+			\draw[black] (84)+(0,0.3) arc (0:180:1.5) node[midway,fill=white]{$I$};
 			\draw[black] (87)+(0,0.3) arc (0:180:1.5) node[midway,fill=white]{$J$};
 
 
