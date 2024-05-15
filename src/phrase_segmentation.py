@@ -161,9 +161,9 @@ def performance_segmentation(avg_beat_length, beat_times, velocity_curve, beat_k
 	breaks = beat_times[0, 1:][break_idx] # use some random times
 	# observations: actual breaks often come just after slow downs (maybe 1-2 seconds after)
 
-	#plot_segmentation(beat_v, velocity_v[:-1], prob_, break_idx)
-	#plot_velocity_curve(velocity_curve[0][:-1], break_idx)
-	plot_beat_curve(avg_beat_length[0], break_idx)
+	#plot_segmentation(beat_v, velocity_v[:-1], prob_, break_idx, sig=sig)
+	#plot_velocity_curve(velocity_curve[0][:-1], break_idx, sig=sig)
+	plot_beat_curve(avg_beat_length[0], break_idx, sig=sig)
 
 	return break_idx, breaks
 	
