@@ -162,7 +162,8 @@ def performance_segmentation(avg_beat_length, beat_times, velocity_curve, beat_k
 	# observations: actual breaks often come just after slow downs (maybe 1-2 seconds after)
 
 	#plot_segmentation(beat_v, velocity_v[:-1], prob_, break_idx)
-	plot_velocity_and_beat_curves(avg_beat_length[0], velocity_curve[0][:-1], break_idx,)
+	#plot_velocity_curve(velocity_curve[0][:-1], break_idx)
+	plot_beat_curve(avg_beat_length[0], break_idx)
 
 	return break_idx, breaks
 	
@@ -182,17 +183,26 @@ def plot_segmentation(beat_v, velocity_v, probs, break_idx, sig=4):
 	plt.savefig("segmentation_plot.pdf", dpi=600)
 	plt.show()
 
-def plot_velocity_and_beat_curves(avg_beat_length, velocity_curve, break_idx, sig=4):
-	#plt.plot(np.arange(avg_beat_length.shape[0]) / sig, avg_beat_length, label="Beat duration")
+def plot_velocity_curve(velocity_curve, break_idx, sig=4):
 	plt.plot(np.arange(velocity_curve.shape[0]) / sig, velocity_curve, label="Velocity curve")
-	points = (np.arange(avg_beat_length.shape[0]) / sig)[break_idx]
-	#plt.plot(points, avg_beat_length[break_idx], 'r*', label="Selected phase breaks")
-	plt.plot(points, velocity_curve[break_idx], 'r*')
+	points = (np.arange(velocity_curve.shape[0]) / sig)[break_idx]
+	plt.plot(points, velocity_curve[break_idx], 'r*', label="Selected phase breaks")
 	plt.xlabel("measure")
 	plt.ylabel("velocity curve")
 	plt.legend()
 	plt.title('Phrase boundaries over velocity curve')
 	plt.savefig("velocity_plot.pdf", dpi=600)
+	plt.show()
+
+def plot_beat_curve(avg_beat_length, break_idx, sig=4):
+	plt.plot(np.arange(avg_beat_length.shape[0]) / sig, avg_beat_length, label="Beat duration")
+	points = (np.arange(avg_beat_length.shape[0]) / sig)[break_idx]
+	plt.plot(points, avg_beat_length[break_idx], 'r*', label="Selected phase breaks")
+	plt.xlabel("measure")
+	plt.ylabel("beat duration")
+	plt.legend()
+	plt.title('Phrase boundaries over beat_duration')
+	plt.savefig("beat_plot.pdf", dpi=600)
 	plt.show()
 
 def plot_velocity_curve(velocity_curve, velocity_values, sig):
