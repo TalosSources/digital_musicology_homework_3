@@ -68,13 +68,13 @@ The project structure is as follows:
 │   ├── phrase_segmentation.py
 │   ├── phrase_tikz.py           # segmentation to tikz converter
 │   ├── ssm_helper.py            # helper function for ssm
-│   └── taskC1.ipynb
+│   └── taskC1.ipynb             # performance phrasing
 └── ssm.ipynb                    # symbolic phrasing
 ```
 
 ## How To Use
 
-To reproduce segmentation, run the code in the corresponding notebooks: `ssm.ipynb` and TODO.
+To reproduce segmentation, run the code in the corresponding notebooks: `ssm.ipynb` and `taskC1.ipynb`.
 
 To draw tikz picture, use `src/phrase_tikz.py`.
 
